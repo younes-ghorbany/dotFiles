@@ -25,30 +25,11 @@ First, check out the dotfiles repo in your $HOME directory using git
 ```
 $ git@github.com:younes-ghorbany/dotFiles.git
 $ cd dotFiles
-```
 
 ```
 
-then use GNU stow to create symlinks
+Then use GNU stow to create symlinks
 
 ```
-
 $ stow .
-
-```
-
-
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
 ```
