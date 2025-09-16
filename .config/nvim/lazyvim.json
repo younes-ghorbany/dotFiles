@@ -4,6 +4,7 @@
     "lazyvim.plugins.extras.coding.nvim-cmp",
     "lazyvim.plugins.extras.editor.inc-rename",
     "lazyvim.plugins.extras.editor.outline",
+    "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns",
     "lazyvim.plugins.extras.util.rest"
