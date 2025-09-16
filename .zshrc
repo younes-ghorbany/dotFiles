@@ -62,9 +62,11 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 # alias ll='ls -al --color'
+alias ls='eza'
 alias ll='eza -a -l'
+alias lsa='eza -a'
+alias lta='eza -a -T'
 alias cl='clear'
-alias ls='ls --color'
 alias vim='nvim'
 
 # Shell integrations
