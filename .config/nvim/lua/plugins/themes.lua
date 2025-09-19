@@ -325,6 +325,13 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
+    config = function()
+      -- Disable transparent_background for Neovide
+      ---@diagnostic disable-next-line: missing-fields
+      require("catppuccin").setup({
+        transparent_background = not vim.g.neovide,
+      })
+    end,
     opts = {
       flavour = "mocha", -- latte, frappe, macchiato, mocha
       background = { -- :h background

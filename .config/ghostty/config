@@ -26,6 +26,7 @@ font-feature = +calt, +liga, +zero, +ss02
 font-thicken = false
 copy-on-select = true
 theme = catppuccin-mocha
+# theme = GruvboxDarkHard
 background-opacity = 0.90
 background-blur = true
 window-padding-x = 15

@@ -1,0 +1,30 @@
+vsync = true
+
+[font]
+hinting = "full"
+size = 10
+edging = "antialias"
+
+[font.features]
+"MonoLisa" = [ "+ss01", "+ss07", "+ss11","+liga", "+calt","+zero", "+ss09", "+ss02", "+ss14" ]
+
+[[font.normal]]
+family = "MonoLisa"
+style = "w400"
+
+[[font.normal]]
+family = "Symbols Nerd Font Mono"
+
+[[font.italic]]
+family = "MonoLisa"
+
+[[font.bold]]
+family = "MonoLisa"
+style = "Semi-Bold"
+
+[[font.bold_italic]]
+family = "MonoLisa"
+style = "Semi-Bold Italic"
+
+[box-drawing]
+mode = "native"
