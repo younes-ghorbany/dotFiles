@@ -326,10 +326,18 @@ return {
     name = "catppuccin",
     priority = 1000,
     config = function()
-      -- Disable transparent_background for Neovide
       ---@diagnostic disable-next-line: missing-fields
       require("catppuccin").setup({
-        transparent_background = not vim.g.neovide,
+        transparent_background = not vim.g.neovide, -- Disable transparent_background for Neovide
+        term_colors = vim.g.neovide, -- Fixing neovim internal terminal colors problem in neovide
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          nvimtree = true,
+          telescope = true,
+          treesitter = true,
+          terminal = vim.g.neovide,
+        },
       })
     end,
     opts = {
