@@ -35,9 +35,9 @@ end
 -- Neovide configuration
 if vim.g.neovide then
   vim.g.neovide_theme = "auto"
-  vim.g.neovide_opacity = 0.7
-  vim.g.neovide_normal_opacity = 0.7
-  vim.g.neovide_window_floating_opacity = 0.7
+  vim.g.neovide_opacity = 0.9
+  vim.g.neovide_normal_opacity = 0.9
+  vim.g.neovide_window_floating_opacity = 0.9
   vim.g.neovide_floating_blur = 0.7
   vim.g.neovide_window_blurred = true
   vim.g.neovide_floating_corner_radius = 1.0
@@ -56,6 +56,10 @@ if vim.g.neovide then
   vim.g.neovide_confirm_quit = true
   vim.g.neovide_fullscreen = false
   vim.g.neovide_refresh_rate = 60
+  vim.g.neovide_padding_top = 10
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 0
+  vim.g.neovide_padding_left = 0
 
   -- Scaling at runtime
   vim.g.neovide_scale_factor = 1.0

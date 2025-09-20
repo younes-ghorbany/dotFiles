@@ -6,3 +6,10 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- This will ensure that, when a file is opened, the working directory changes
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.cmd("silent! lcd %:p:h")
+  end,
+})
