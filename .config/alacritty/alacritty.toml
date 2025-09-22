@@ -4,10 +4,10 @@ general.import = [ "~/.config/omarchy/current/theme/alacritty.toml" ]
 TERM = "xterm-256color"
 
 [font]
-normal = { family = "MonoLisa" }
-bold = { family = "MonoLisa" }
-italic = { family = "MonoLisa" }
-size = 12
+normal = { family = "MonoLisa" , style = "Light"}
+bold = { family = "MonoLisa" , style = "Medium"}
+italic = { family = "MonoLisa" , style = "MonoLisa"}
+size = 11
 
 [window]
 padding.x = 14

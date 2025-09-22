@@ -1,6 +1,6 @@
 # Dotfiles
 
-A collection of my personal configuration files to set up and maintain a consistent development environment.
+A collection of my personal configuration files.
 
 ## Requirements
 
