@@ -2,7 +2,7 @@ vsync = true
 
 [font]
 hinting = "full"
-size = 10
+size = 12
 edging = "antialias"
 
 [font.features]
@@ -10,10 +10,15 @@ edging = "antialias"
 
 [[font.normal]]
 family = "MonoLisa"
-style = "w400"
+style = "Light"
 
+# Fallback font
 [[font.normal]]
 family = "Symbols Nerd Font Mono"
+
+# Fallback font (Persian font support)
+[[font.normal]]
+family = "Vazirmatn"
 
 [[font.italic]]
 family = "MonoLisa"

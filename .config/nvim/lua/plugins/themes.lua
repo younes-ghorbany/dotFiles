@@ -352,7 +352,7 @@ return {
         solid = false, -- use solid styling for floating windows, see |winborder|
       },
       show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-      term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+      term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
       dim_inactive = {
         enabled = false, -- dims the background color of inactive window
         shade = "dark",
@@ -364,8 +364,8 @@ return {
       styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
         comments = { "italic" }, -- Change the style of comments
         conditionals = { "italic" },
-        loops = {},
-        functions = {},
+        loops = { "italic" },
+        functions = { "italic" },
         keywords = {},
         strings = {},
         variables = {},
@@ -379,7 +379,7 @@ return {
       color_overrides = {},
       custom_highlights = {},
       default_integrations = true,
-      auto_integrations = false,
+      auto_integrations = true,
       integrations = {
         cmp = true,
         gitsigns = true,

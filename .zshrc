@@ -15,7 +15,6 @@ autoload -Uz _zinit
 ### End of Zinit's installer chunk
 
 export NVM_LAZY_LOAD=true # Lazy loading nvm for better performance
-# export NVM_COMPLETION=true # Enabling completion for nvm
 
 # ZSH plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -27,7 +26,6 @@ zinit light lukechilds/zsh-nvm
 # Add snippets
 zinit snippet OMZP::git
 zinit snippet OMZP::npm
-# zinit snippet OMZP::nvm
 zinit snippet OMZP::command-not-found
 
 # Load completions
@@ -61,13 +59,13 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-# alias ll='ls -al --color'
 alias ls='eza'
 alias ll='eza -a -l'
 alias lsa='eza -a'
 alias lta='eza -a -T'
 alias cl='clear'
 alias vim='nvim'
+alias neo='neo-matrix -D -m "Ghorbany.DEV"'
 
 # Shell integrations
 source <(fzf --zsh)
