@@ -1,12 +1,12 @@
-local bufferline = require("bufferline")
+-- local bufferline = require("bufferline")
 return {
   "akinsho/bufferline.nvim",
-  init = function()
-    local bufline = require("catppuccin.groups.integrations.bufferline")
-    function bufline.get()
-      return bufline.get_theme()
-    end
-  end,
+  -- init = function()
+  --   local bufline = require("catppuccin.groups.integrations.bufferline")
+  --   function bufline.get()
+  --     return bufline.get_theme()
+  --   end
+  -- end,
   event = "VeryLazy",
   keys = {
     { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },

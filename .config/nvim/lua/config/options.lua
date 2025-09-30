@@ -35,8 +35,8 @@ end
 -- Neovide configuration
 if vim.g.neovide then
   vim.g.neovide_theme = "auto"
-  vim.g.neovide_opacity = 0.9
-  vim.g.neovide_normal_opacity = 0.9
+  -- vim.g.neovide_opacity = 0.9
+  -- vim.g.neovide_normal_opacity = 0.9
   vim.g.neovide_window_floating_opacity = 0.9
   vim.g.neovide_floating_blur = 0.7
   vim.g.neovide_window_blurred = true
