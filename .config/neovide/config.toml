@@ -2,14 +2,14 @@ vsync = true
 
 [font]
 hinting = "full"
-size = 12
+size = 11
 edging = "antialias"
 
 [font.features]
 "MonoLisa" = [ "+ss01", "+ss07", "+ss11","+liga", "+calt","+zero", "+ss09", "+ss02", "+ss14" ]
 
 [[font.normal]]
-family = "MonoLisa"
+family = "JetBrainsMono Nerd Font"
 style = "Light"
 
 # Fallback font
