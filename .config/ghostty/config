@@ -25,9 +25,9 @@ font-size = 10
 font-feature = +calt, +liga, +zero, +ss02
 font-thicken = false
 copy-on-select = true
-theme = catppuccin-mocha
-background-opacity = 0.90
-background-opacity-cells = true
+theme = tokyonight_moon
+# background-opacity = 0.90
+# background-opacity-cells = true
 background-blur = true
 unfocused-split-opacity = 0.20
 window-theme = ghostty
@@ -37,7 +37,7 @@ mouse-hide-while-typing = true
 clipboard-trim-trailing-spaces = false
 confirm-close-surface = false
 quick-terminal-position = center
-quick-terminal-size = 50%,400px
+# quick-terminal-size = 50%,400px
 # title = "Terminal"
 # macos-titlebar-proxy-icon = hidden
 # macos-titlebar-style = hidden
@@ -55,4 +55,4 @@ quick-terminal-size = 50%,400px
 
 
 # Custom keybindings
-keybind = global:cmd+backquote=toggle_quick_terminal
+# keybind = global:cmd+backquote=toggle_quick_terminal

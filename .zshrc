@@ -1,4 +1,4 @@
-. "$HOME/.local/share/../bin/env"
+# . "$HOME/.local/share/../bin/env"
 
 HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
 if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
@@ -75,6 +75,9 @@ alias neo='neo -a -D -m=Ghorbany.DEV -s' # Only works on macos after installing 
 
 # Shell integrations
 source <(fzf --zsh)
+
+# EZA - Setting the config path (macos only)
+export EZA_CONFIG_DIR=~/.config/eza
 
 # Zoxide integration
 eval "$(zoxide init --cmd cd zsh)"
