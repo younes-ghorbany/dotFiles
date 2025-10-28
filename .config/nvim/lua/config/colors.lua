@@ -1,4 +1,0 @@
--- Make the tabs background transparent
--- vim.api.nvim_set_hl(0, "TabLine", { bg = "NONE", fg = "#839496" })
--- vim.api.nvim_set_hl(0, "TabLineSel", { bg = "NONE", fg = "#ffffff", bold = true })
--- vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE" })

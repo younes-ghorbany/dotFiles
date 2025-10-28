@@ -1,0 +1,15 @@
+# macOS system files
+\.DS_Store$
+
+# Backup files created by editors (e.g. .bashrc~)
+.*~
+
+# Windows thumbnail cache
+Thumbs.db
+
+# README file 
+README.md
+
+# Ignore Git files and folders
+^\.git(ignore|attributes|modules)?$
+^\.git/$

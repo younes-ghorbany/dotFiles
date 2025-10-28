@@ -7,7 +7,7 @@ return {
     config = function()
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
-      vim.g.sonokai_transparent_background = 2
+      -- vim.g.sonokai_transparent_background = 2
       vim.g.sonokai_enable_italic = true
       vim.g.sonokai_style = "atlantis"
       -- vim.cmd.colorscheme("sonokai")
@@ -20,7 +20,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent_background = true,
+      transparent_background = false,
       terminal_colors = true,
       devicons = true, -- highlight the icons of `nvim-web-devicons`
       styles = {
@@ -89,7 +89,7 @@ return {
     dependencies = { "rktjmp/lush.nvim" },
     opts = {
       style = "auto", -- "auto" | "dark" | "light"
-      transparent = true,
+      transparent = false,
       italics = true,
       terminal = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
       guicursor = true,
@@ -145,7 +145,7 @@ return {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       palette = "default", -- Available options: "default" (standard palette), "darker" (darker variant)
-      transparent = true, -- Enable this to disable setting the background color
+      transparent = false, -- Enable this to disable setting the background color
       terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
       styles = {
         -- Style to be applied to different syntax groups
@@ -312,7 +312,7 @@ return {
     lazy = true,
     opts = {
       style = "moon",
-      transparent = true,
+      transparent = false,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
@@ -398,7 +398,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "tokyonight",
       -- style = "mocha",
     },
   },

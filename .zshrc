@@ -1,5 +1,10 @@
 . "$HOME/.local/share/../bin/env"
 
+HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
+if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
+  source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER";
+fi
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -65,7 +70,8 @@ alias lsa='eza -a'
 alias lta='eza -a -T'
 alias cl='clear'
 alias vim='nvim'
-alias neo='neo-matrix -D -m "Ghorbany.DEV"'
+alias neo='neo -a -D -m=Ghorbany.DEV -s' # Only works on macos after installing https://github.com/st3w/neo
+# alias neo='neo-matrix -D -m "Ghorbany.DEV"' # Only works on linux after instaling the neo-matrix
 
 # Shell integrations
 source <(fzf --zsh)
