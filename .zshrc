@@ -70,6 +70,7 @@ alias lsa='eza -a'
 alias lta='eza -a -T'
 alias cl='clear'
 alias vim='nvim'
+alias lg='lazygit'
 alias neo='neo -a -D -m=Ghorbany.DEV -s' # Only works on macos after installing https://github.com/st3w/neo
 # alias neo='neo-matrix -D -m "Ghorbany.DEV"' # Only works on linux after instaling the neo-matrix
 

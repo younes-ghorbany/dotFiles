@@ -17,6 +17,8 @@ return {
         "eslint-lsp",
         "codelldb",
         "js-debug-adapter",
+        "bacon",
+        "bacon-ls",
       })
       opts.ui = {
         border = "rounded",
