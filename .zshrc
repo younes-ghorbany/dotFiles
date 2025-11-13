@@ -71,6 +71,7 @@ alias lta='eza -a -T'
 alias cl='clear'
 alias vim='nvim'
 alias lg='lazygit'
+alias cbon='cbonsai -i -l'
 alias neo='neo -a -D -m=Ghorbany.DEV -s' # Only works on macos after installing https://github.com/st3w/neo
 # alias neo='neo-matrix -D -m "Ghorbany.DEV"' # Only works on linux after instaling the neo-matrix
 
@@ -87,3 +88,14 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config "~/.config/ohmyposh/themes/zen.toml")"
 fi
 
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+
+# FZF customize
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:-1,bg:-1,hl:#82aaff
+  --color=fg+:#c8d3f5,bg+:#2a2e48,hl+:#82aaff
+  --color=info:#444a73,prompt:#82aaff,pointer:#ff757f 
+  --color=marker:#ffc777,spinner:#ffc777,header:#ffc777
+  --border="rounded" --border-label="" --preview-window="border-rounded" --padding="1"
+  --margin="1" --prompt="🤖 " --marker="> " --pointer="◆"
+  --separator="─" --scrollbar="│" --layout="reverse"'
