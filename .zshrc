@@ -1,8 +1,10 @@
 # . "$HOME/.local/share/../bin/env"
 
-HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
-if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
-  source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER";
+if [[ "$OSTYPE" != "linux-gnu"* ]]; then
+  HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
+  if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
+    source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER";
+  fi
 fi
 
 ### Added by Zinit's installer
@@ -78,8 +80,12 @@ alias rd='rustup doc --std'
 alias vim='nvim'
 alias lg='lazygit'
 alias cbon='cbonsai -i -l'
-alias neo='neo -a -D -m=Ghorbany.DEV -s' # Only works on macos after installing https://github.com/st3w/neo
-# alias neo='neo-matrix -D -m "Ghorbany.DEV"' # Only works on linux after instaling the neo-matrix
+
+if [[ "$OSTYPE" != "linux-gnu"* ]]; then
+  alias neo='neo -a -D -m=Ghorbany.DEV -s' # Only works on macos after installing https://github.com/st3w/neo
+else 
+  alias neo='neo-matrix -D -m "Ghorbany.DEV"' # Only works on linux after instaling the neo-matrix
+fi
 
 # Shell integrations
 source <(fzf --zsh)
