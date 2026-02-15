@@ -12,15 +12,15 @@ vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 vim.opt.pumblend = 0
 vim.opt.winblend = 0
 
-vim.g.ai_cmp = false -- Disable ai suggestions
-vim.g.snacks_animate = false -- Disabling all animations
+vim.g.ai_cmp = true          -- Disable ai suggestions
+vim.g.snacks_animate = true  -- Disabling all animations
 
-vim.opt.termbidi = true --- Enable bidirectional language support
+vim.opt.termbidi = true      --- Enable bidirectional language support
 
 vim.opt.termguicolors = true -- Showing all the available colors
 
-vim.opt.swapfile = false -- Disable swap file
-vim.opt.list = false -- Display invisible chars
+vim.opt.swapfile = false     -- Disable swap file
+vim.opt.list = false         -- Display invisible chars
 
 vim.opt.listchars = {
   space = ".",

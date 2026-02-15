@@ -111,3 +111,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --border="rounded" --border-label="" --preview-window="border-rounded" --padding="1"
   --margin="1" --prompt="🤖 " --marker="> " --pointer="◆"
   --separator="─" --scrollbar="│" --layout="reverse"'
+
+# opencode
+export PATH=/home/uns/.opencode/bin:$PATH

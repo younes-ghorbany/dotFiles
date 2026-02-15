@@ -2,14 +2,24 @@ vsync = true
 
 [font]
 hinting = "full"
-size = 11
+size = 12
 edging = "antialias"
 
 [font.features]
-"MonoLisa" = [ "+ss01", "+ss07", "+ss11","+liga", "+calt","+zero", "+ss09", "+ss02", "+ss14" ]
+"MonoLisa" = [
+  "+ss01",
+  "+ss07",
+  "+ss11",
+  "+liga",
+  "+calt",
+  "+zero",
+  "+ss09",
+  "+ss02",
+  "+ss14",
+]
 
 [[font.normal]]
-family = "JetBrainsMono Nerd Font"
+family = "DankMono Nerd Font"
 style = "Light"
 
 # Fallback font
@@ -21,15 +31,15 @@ family = "Symbols Nerd Font Mono"
 family = "Vazirmatn"
 
 [[font.italic]]
-family = "MonoLisa"
+family = "DankMono Nerd Font"
 
-[[font.bold]]
-family = "MonoLisa"
-style = "Semi-Bold"
+# [[font.bold]]
+# family = "MonoLisa"
+# style = "Semi-Bold"
 
-[[font.bold_italic]]
-family = "MonoLisa"
-style = "Semi-Bold Italic"
+# [[font.bold_italic]]
+# family = "MonoLisa"
+# style = "Semi-Bold Italic"
 
 [box-drawing]
 mode = "native"
