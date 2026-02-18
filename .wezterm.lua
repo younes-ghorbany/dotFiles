@@ -29,5 +29,8 @@ config.window_padding = {
 -- config.experimental_bidi = true
 config.bidi_enabled = true
 config.bidi_direction = "LeftToRight"
+config.window_close_confirmation = 'NeverPrompt'
+-- config.default_prog = { 'tmux', 'new-session', '-A', '-s', '🤠' }
+
 -- Finally, return the configuration to wezterm:
 return config
