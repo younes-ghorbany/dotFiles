@@ -61,13 +61,14 @@ autoload -Uz _zinit
 t() {
   if [ -z "$TMUX" ]; then
     if ! command tmux has-session -t "GhorbanyDEV" 2>/dev/null; then
-      command tmux new-session -d -s "GhorbanyDEV" -n Terminal
-      command tmux new-window -n Coding
-      command tmux new-window -n Playground
-      command tmux new-window -n Email
-      command tmux new-window -n AI
-      command tmux new-window -n "Teaching Terminal"
-      command tmux new-window -n "Teaching Coding"
+      command tmux new-session -d -s "GhorbanyDEV" -n "≯ Terminal"
+      command tmux new-window -n "👾Coding"
+      command tmux new-window -n "🤠Playground"
+      command tmux new-window -n "📪Email"
+      command tmux new-window -n "🤖AI"
+      command tmux new-window -n "👨‍🏫Teaching Terminal"
+      command tmux new-window -n "👨‍🏫Teaching Coding"
+      command tmux new-window -n "🎵Music"
     fi
     command tmux select-window -t "GhorbanyDEV":1
     command tmux attach-session -t "GhorbanyDEV"
@@ -142,8 +143,20 @@ alias lsa='eza -a'
 alias lta='eza -a -T'
 alias cl='clear'
 
+# Fastfetch
+alias ff="fastfetch"
+
+# Warp-cli aliases 
+alias wpc='warp-cli connect'
+alias wpd='warp-cli disconnect'
+alias wps='warp-cli status'
+
+# Internal ntfs disk mount
+alias mnd='sudo mount /dev/sdb1 /mnt'
+
 # Zsh config 
 alias zc='nvim ~/.zshrc'
+alias szc='source ~/.zshrc'
 
 # Cargo/Rust aliases
 alias cr='cargo run --quiet'
@@ -155,6 +168,10 @@ alias rd='rustup doc --std'
 
 # Editor aliases
 alias vim='nvim'
+alias nh="nvim ."
+
+# AI aliases 
+alias oc='opencode'
 
 # Git tools
 alias lg='lazygit'

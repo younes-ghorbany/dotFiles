@@ -12,6 +12,8 @@ local config = wezterm.config_builder()
 
 -- or, changing the font size and color scheme.
 -- config.font = wezterm.font 'DankMono Nerd Font'
+config.window_background_opacity = 0.6
+
 config.font = wezterm.font_with_fallback {
   'DankMono Nerd Font',
   'IRANSansX',
