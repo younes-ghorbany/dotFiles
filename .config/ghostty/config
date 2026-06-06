@@ -58,3 +58,6 @@ macos-icon = retro
 
 # Custom keybindings
 # keybind = global:cmd+backquote=toggle_quick_terminal
+
+# Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
+async-backend = epoll

@@ -14,50 +14,7 @@ return {
     end,
     opts = {},
   },
-  -- Monokai Pro
-  {
-    "loctvl842/monokai-pro.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent_background = false,
-      terminal_colors = true,
-      devicons = true, -- highlight the icons of `nvim-web-devicons`
-      styles = {
-        comment = { italic = true },
-        keyword = { italic = true },       -- any other keyword
-        type = { italic = true },          -- (preferred) int, long, char, etc
-        storageclass = { italic = true },  -- static, register, volatile, etc
-        structure = { italic = true },     -- struct, union, enum, etc
-        parameter = { italic = true },     -- parameter pass in function
-        annotation = { italic = true },
-        tag_attribute = { italic = true }, -- attribute of tag in reactjs
-      },
-      filter = "octagon",                  -- classic | octagon | pro | machine | ristretto | spectrum
-      inc_search = "background",           -- underline | background
-      background_clear = {
-        "float_win",
-        "toggleterm",
-        "telescope",
-        "which-key",
-        "renamer",
-        -- "notify",
-        "nvim-tree",
-        -- "neo-tree",
-        "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
-      },              -- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree", "nvim-tree", "bufferline"
-      override = function(c)
-        local hp = require("monokai-pro.color_helper")
-        local common_fg = hp.lighten(c.sideBar.foreground, 30)
-        return {
-          SnacksPicker = { bg = c.editor.background, fg = common_fg },
-          SnacksPickerBorder = { bg = c.editor.background, fg = c.tab.unfocusedActiveBorder },
-          SnacksPickerTree = { fg = c.editorLineNumber.foreground },
-          NonText = { fg = c.base.dimmed3 }, -- not sure if this should be broken into all hl groups importing NonText
-        }
-      end,
-    },
-  },
+
   -- kanagawa theme
   {
     "rebelot/kanagawa.nvim",
@@ -97,44 +54,6 @@ return {
     },
   },
 
-  -- cyberdream
-  {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      -- Set light or dark variant
-      variant = "auto", -- use "light" for the light variant. Also accepts "auto" to set dark or light colors based on the current value of `vim.o.background`
-
-      -- Enable transparent background
-      transparent = true,
-
-      -- Reduce the overall saturation of colours for a more muted look
-      saturation = 1, -- accepts a value between 0 and 1. 0 will be fully desaturated (greyscale) and 1 will be the full color (default)
-
-      -- Enable italics comments
-      italic_comments = true,
-
-      -- Replace all fillchars with ' ' for the ultimate clean look
-      hide_fillchars = false,
-
-      -- Apply a modern borderless look to pickers like Telescope, Snacks Picker & Fzf-Lua
-      borderless_pickers = false,
-
-      -- Set terminal colors used in `:terminal`
-      terminal_colors = true,
-
-      -- Improve start up time by caching highlights. Generate cache with :CyberdreamBuildCache and clear with :CyberdreamClearCache
-      cache = false,
-
-      -- Disable or enable colorscheme extensions
-      extensions = {
-        telescope = true,
-        notify = true,
-        mini = true,
-      },
-    },
-  },
   -- Dracula theme
   {
     "Mofiqul/dracula.nvim",
@@ -191,6 +110,7 @@ return {
       -- end,
     },
   },
+
   -- eldritch theme
   {
     "eldritch-theme/eldritch.nvim",

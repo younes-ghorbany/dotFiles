@@ -12,13 +12,13 @@ local config = wezterm.config_builder()
 
 -- or, changing the font size and color scheme.
 -- config.font = wezterm.font 'DankMono Nerd Font'
-config.window_background_opacity = 0.6
+config.window_background_opacity = 0.88
 
 config.font = wezterm.font_with_fallback {
   'DankMono Nerd Font',
   'IRANSansX',
 }
-config.font_size = 12
+config.font_size = 13.5
 config.color_scheme = 'Catppuccin Mocha'
 config.enable_tab_bar = false
 config.window_padding = {
@@ -28,11 +28,9 @@ config.window_padding = {
   bottom = 0,
 }
 
--- config.experimental_bidi = true
 config.bidi_enabled = true
 config.bidi_direction = "LeftToRight"
 config.window_close_confirmation = 'NeverPrompt'
--- config.default_prog = { 'tmux', 'new-session', '-A', '-s', '🤠' }
 
 -- Finally, return the configuration to wezterm:
 return config

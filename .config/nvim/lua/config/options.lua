@@ -8,6 +8,15 @@
 -- provided by rust-analyzer.
 vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 
+-- disable automatic comment continuation when using 'o', 'O', or Enter
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    -- if you want to disable automatic comment on ENTER add "r" afer "c"
+    vim.opt_local.formatoptions:remove({ "c", "o" })
+  end,
+})
+
 -- nvim-cmp transparent background
 vim.opt.pumblend = 0
 vim.opt.winblend = 0
@@ -41,12 +50,12 @@ end
 -- Neovide configuration
 if vim.g.neovide then
   vim.g.neovide_theme = "auto"
-  -- vim.g.neovide_opacity = 0.9
-  -- vim.g.neovide_normal_opacity = 0.9
+  vim.g.neovide_opacity = 0.9
+  vim.g.neovide_normal_opacity = 0.9
   vim.g.neovide_window_floating_opacity = 0.9
   vim.g.neovide_floating_blur = 0.7
   vim.g.neovide_window_blurred = true
-  vim.g.neovide_floating_corner_radius = 1.0
+  vim.g.neovide_floating_corner_radius = 0.5
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_floating_blur_amount_y = 2.0
   vim.g.neovide_floating_shadow = true
@@ -62,7 +71,7 @@ if vim.g.neovide then
   vim.g.neovide_confirm_quit = true
   vim.g.neovide_fullscreen = false
   vim.g.neovide_refresh_rate = 60
-  vim.g.neovide_padding_top = 10
+  vim.g.neovide_padding_top = 0
   vim.g.neovide_padding_bottom = 0
   vim.g.neovide_padding_right = 0
   vim.g.neovide_padding_left = 0

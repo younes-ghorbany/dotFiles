@@ -63,11 +63,11 @@ t() {
     if ! command tmux has-session -t "GhorbanyDEV" 2>/dev/null; then
       command tmux new-session -d -s "GhorbanyDEV" -n "≯ Terminal"
       command tmux new-window -n "👾Coding"
-      command tmux new-window -n "🤠Playground"
+      command tmux new-window -n "🔧Playground"
       command tmux new-window -n "📪Email"
       command tmux new-window -n "🤖AI"
-      command tmux new-window -n "👨‍🏫Teaching Terminal"
-      command tmux new-window -n "👨‍🏫Teaching Coding"
+      # command tmux new-window -n "👨‍🏫Teaching Terminal"
+      command tmux new-window -n "👨‍🏫Teaching"
       command tmux new-window -n "🎵Music"
     fi
     command tmux select-window -t "GhorbanyDEV":1
@@ -86,6 +86,7 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light lukechilds/zsh-nvm
+zinit light grml/zsh-lovers
 
 # Built-in plugin snippets
 zinit snippet OMZP::git
@@ -142,6 +143,12 @@ alias ll='eza -a -l'
 alias lsa='eza -a'
 alias lta='eza -a -T'
 alias cl='clear'
+alias -g ...='cd ../..'
+alias -g ....='cd ../../..'
+alias -g .....='cd ../../../..'
+
+# AWWW
+alias aw='awww-daemon &'
 
 # Fastfetch
 alias ff="fastfetch"
@@ -168,7 +175,7 @@ alias rd='rustup doc --std'
 
 # Editor aliases
 alias vim='nvim'
-alias nh="nvim ."
+alias n="nvim ."
 
 # AI aliases 
 alias oc='opencode'
@@ -190,6 +197,9 @@ alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacma
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+# Socks5 Proxy Alias 
+alias proxyoff='unset ALL_PROXY http_proxy https_proxy'
 
 # Neo matrix alias (different for each platform)
 if [[ "$OSTYPE" != "linux-gnu"* ]]; then
@@ -228,3 +238,6 @@ fi
 
 # Random color script for terminal aesthetics
 colorscript random
+
+# GapCode
+export PATH="/home/uns/.gapcode/bin:$PATH"
