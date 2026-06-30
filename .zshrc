@@ -10,9 +10,10 @@
 #                                   EXPORTS                                     #
 # ============================================================================= #
 
-export NVM_LAZY_LOAD=true                              # Lazy loading nvm for better performance
-export EZA_CONFIG_DIR=~/.config/eza                    # EZA config (macOS only)
-export PATH=/home/uns/.opencode/bin:$PATH              # OpenCode
+export NVM_LAZY_LOAD=true                               # Lazy loading nvm for better performance
+export EZA_CONFIG_DIR=~/.config/eza                     # EZA config (macOS only)
+export PATH=/home/uns/.opencode/bin:$PATH               # OpenCode
+export FREEPLANE_JAVA_HOME=/usr/lib/jvm/java-21-openjdk # Freeplane App
 
 # FZF customization
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -61,14 +62,14 @@ autoload -Uz _zinit
 t() {
   if [ -z "$TMUX" ]; then
     if ! command tmux has-session -t "GhorbanyDEV" 2>/dev/null; then
-      command tmux new-session -d -s "GhorbanyDEV" -n "≯ Terminal"
-      command tmux new-window -n "👾Coding"
-      command tmux new-window -n "🔧Playground"
-      command tmux new-window -n "📪Email"
-      command tmux new-window -n "🤖AI"
+      command tmux new-session -d -s "GhorbanyDEV" -n "Terminal"
+      command tmux new-window -n "Coding"
+      command tmux new-window -n "Playground"
+      command tmux new-window -n "Email"
+      command tmux new-window -n "AI"
       # command tmux new-window -n "👨‍🏫Teaching Terminal"
-      command tmux new-window -n "👨‍🏫Teaching"
-      command tmux new-window -n "🎵Music"
+      command tmux new-window -n "Teaching"
+      command tmux new-window -n "Music"
     fi
     command tmux select-window -t "GhorbanyDEV":1
     command tmux attach-session -t "GhorbanyDEV"
@@ -165,6 +166,9 @@ alias mnd='sudo mount /dev/sdb1 /mnt'
 alias zc='nvim ~/.zshrc'
 alias szc='source ~/.zshrc'
 
+# Tmux config
+alias tc='nvim ~/.config/tmux/tmux.conf'
+
 # Cargo/Rust aliases
 alias cr='cargo run --quiet'
 alias cb='cargo build'
@@ -186,7 +190,11 @@ alias lg='lazygit'
 # Fun aliases
 alias cbon='cbonsai -i -l'
 
+# Yazi
+alias y='yazi'
+
 # pacman and yay aliases
+alias pacpox='sudo proxychains pacman -Sy'
 alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'                # Refresh pkglist & update standard pkgs
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock

@@ -21,15 +21,15 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.opt.pumblend = 0
 vim.opt.winblend = 0
 
-vim.g.ai_cmp = false         -- Disable ai suggestions
+vim.g.ai_cmp = false -- Disable ai suggestions
 vim.g.snacks_animate = false -- Disabling all animations
 
-vim.opt.termbidi = true      --- Enable bidirectional language support
+vim.opt.termbidi = true --- Enable bidirectional language support
 
 vim.opt.termguicolors = true -- Showing all the available colors
 
-vim.opt.swapfile = false     -- Disable swap file
-vim.opt.list = false         -- Display invisible chars
+vim.opt.swapfile = false -- Disable swap file
+vim.opt.list = false -- Display invisible chars
 
 vim.opt.listchars = {
   space = ".",
