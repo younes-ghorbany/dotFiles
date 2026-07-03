@@ -18,8 +18,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- nvim-cmp transparent background
-vim.opt.pumblend = 0
-vim.opt.winblend = 0
+-- vim.opt.pumblend = 0
+-- vim.opt.winblend = 0
 
 vim.g.ai_cmp = false -- Disable ai suggestions
 vim.g.snacks_animate = false -- Disabling all animations

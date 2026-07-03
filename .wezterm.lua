@@ -4,7 +4,7 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.97
 
 config.font = wezterm.font_with_fallback({
 	{ family = "MapleMono NF", weight = "Light", italic = false },
@@ -12,8 +12,8 @@ config.font = wezterm.font_with_fallback({
 	"IRANSansX",
 })
 config.font_size = 10.5
-config.line_height = 1.2
--- config.color_scheme = "Catppuccin Mocha"
+config.line_height = 1.1
+
 config.color_scheme = "Tokyo Night Moon"
 config.enable_tab_bar = false
 config.window_padding = {
