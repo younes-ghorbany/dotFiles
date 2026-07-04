@@ -4,18 +4,46 @@ general.import = ["~/.config/omarchy/current/theme/alacritty.toml"]
 TERM = "xterm-256color"
 
 [font]
-normal = { family = "Maple Mono NF" }
-bold = { family = "Maple Mono NF" }
-italic = { family = "Maple Mono NF" }
-size = 12
+size = 10.5
 
-[window]
-# padding.x = 14
-# padding.y = 14
-decorations = "None"
+[font.bold]
+family = "Maple Mono NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "Maple Mono NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "Maple Mono NF"
+style = "Italic"
+
+[font.normal]
+family = "Maple Mono NF"
+style = "Light"
+
+[font.offset]
+x = 0
+y = 1
 
 [keyboard]
 bindings = [{ key = "F11", action = "ToggleFullscreen" }]
 
 [terminal]
 osc52 = "CopyPaste"
+
+[scrolling]
+history = 10000
+
+[window]
+dynamic_padding = false
+opacity = 0.80
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 0
+y = 0

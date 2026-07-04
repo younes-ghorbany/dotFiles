@@ -41,9 +41,21 @@ return {
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
         },
+        formats = {
+          key = function(item)
+            return { { "[", hl = "special" }, { item.key, hl = "key" }, { "]", hl = "special" } }
+          end,
+        },
         sections = {
           ---@diagnostic disable-next-line: assign-type-mismatch
           { padding = 0, align = "center", text = { HEADERS.neovim, hl = "header" } },
+          -- This will add Ghorbany.DEV logo in Neovim dashboard
+          -- {
+          --   section = "terminal",
+          --   cmd = "chafa --format symbols --symbols all --size 60x8 --stretch ~/.config/nvim/gh.png",
+          --   align = "center",
+          --   padding = 0,
+          -- },
           ---@diagnostic disable-next-line: assign-type-mismatch
           { padding = 2, align = "center", text = { "[ https://ghorbany.dev/ ]", hl = "key" } },
           { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
