@@ -10,6 +10,15 @@ local opts = { noremap = true, silent = true }
 -- Cmd+W For closing the Buffer
 vim.keymap.set("n", "<D-w>", "<cmd>bd<cr>", { desc = "Close Buffer" })
 
+-- Dashboard
+vim.keymap.set("n", "<leader>h", function()
+  vim.cmd("silent! %bd")
+  Snacks.dashboard()
+end, { desc = "Close buffers and show dashboard" })
+
+-- ShowKeysToggle
+vim.keymap.set("n", "<leader>uk", "<cmd>ShowkeysToggle<cr>", { desc = "Toggle showkeys" })
+
 -- Entering Normal mode With <jk>
 keymap.set("i", "jk", "<Esc>")
 

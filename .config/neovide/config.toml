@@ -1,12 +1,20 @@
 vsync = true
+tabs = true
+wayland-app-id = "neovide"
+
+[box-drawing]
+mode = "native"
+
+[box-drawing.sizes]
+default = [2, 4] # Thin and thick values respectively, for all sizes
 
 [font]
 hinting = "full"
-size = 13
+size = 10
 edging = "antialias"
 
 [font.features]
-"MonoLisa" = [
+"Maple Mono NF" = [
   "+ss01",
   "+ss07",
   "+ss11",
@@ -19,19 +27,24 @@ edging = "antialias"
 ]
 
 [[font.normal]]
-family = "DankMono Nerd Font"
+family = "Maple Mono NF"
 style = "Light"
 
 # Fallback font
 [[font.normal]]
-family = "Symbols Nerd Font Mono"
+family = "Maple Mono NF"
+style = "Light"
 
 # Fallback font (Persian font support)
 [[font.normal]]
 family = "Vazirmatn"
 
 [[font.italic]]
-family = "DankMono Nerd Font"
+family = "Maple Mono NF"
+style = "Light Italic"
+
+[[font.bold]]
+family = "Maple Mono NF"
 
 # [[font.bold]]
 # family = "MonoLisa"
@@ -40,6 +53,3 @@ family = "DankMono Nerd Font"
 # [[font.bold_italic]]
 # family = "MonoLisa"
 # style = "Semi-Bold Italic"
-
-[box-drawing]
-mode = "native"

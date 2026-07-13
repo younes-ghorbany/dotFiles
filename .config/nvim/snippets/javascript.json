@@ -1,0 +1,16 @@
+{
+  "JavaScript Tutorial Lesson": {
+    "prefix": "js-for-react",
+    "body": [
+      "/* eslint-disable no-unused-vars, no-constant-condition, no-console, no-empty, no-shadow */",
+      "",
+      "/**",
+      " * LESSON: ${1:Lesson Title}",
+      " * CHAPTER: ${2:Chapter Title}",
+      " * Course: JS for React && Next.js: beyond syntax (by Younes Ghorbany)",
+      " */",
+      "  $0"
+    ],
+    "description": "Create a new JS tutorial lesson template"
+  }
+}

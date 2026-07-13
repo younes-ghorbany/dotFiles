@@ -4,7 +4,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      local transparent_enabled = true
+      local transparent_enabled = false
 
       local function apply_theme()
         require("tokyonight").setup({
