@@ -30,11 +30,6 @@ edging = "antialias"
 family = "Maple Mono NF"
 style = "Light"
 
-# Fallback font
-[[font.normal]]
-family = "Maple Mono NF"
-style = "Light"
-
 # Fallback font (Persian font support)
 [[font.normal]]
 family = "Vazirmatn"

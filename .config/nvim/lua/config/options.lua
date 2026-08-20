@@ -34,12 +34,12 @@ vim.opt.list = false -- Display invisible chars
 vim.opt.listchars = {
   space = ".",
   eol = "↵",
-  nbsp = "␣",
-  trail = "·",
-  precedes = "←",
-  extends = "→",
-  tab = "¬ ",
   conceal = "※",
+  nbsp = "⦸", -- CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
+  extends = "»", -- RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00BB, UTF-8: C2 BB)
+  precedes = "«", -- LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, UTF-8: C2 AB)
+  tab = "▷─", -- WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7) + BOX DRAWINGS LIGHT HORIZONTAL (U+2500, UTF-8: E2 94 80)
+  trail = "•", -- BULLET (U+2022, UTF-8: E2 80 A2)
 }
 
 -- Goneovim configuration

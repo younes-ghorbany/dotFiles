@@ -7,14 +7,15 @@ local config = wezterm.config_builder()
 config.window_background_opacity = 0.97
 
 config.font = wezterm.font_with_fallback({
-	{ family = "MapleMono NF", weight = "Light", italic = false },
+	{ family = "Maple Mono NF", weight = "Regular", italic = false },
 	"DankMono Nerd Font",
 	"IRANSansX",
 })
-config.font_size = 10.5
+config.font_size = 11
 config.line_height = 1.1
 
-config.color_scheme = "Tokyo Night Moon"
+-- config.color_scheme = "Tokyo Night Moon"
+config.color_scheme = "Catppuccin Macchiato (Gogh)"
 config.enable_tab_bar = false
 config.window_padding = {
 	left = 0,
@@ -27,6 +28,6 @@ config.bidi_enabled = true
 config.bidi_direction = "LeftToRight"
 config.window_close_confirmation = "NeverPrompt"
 
-config.enable_wayland = false -- Only way to run wezterm in OMARCHY Linux
+config.enable_wayland = true -- Only way to run wezterm in OMARCHY Linux when using Nvidia Driver ofcourse 😄
 
 return config
