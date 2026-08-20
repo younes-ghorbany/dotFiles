@@ -244,8 +244,11 @@ fi
 #                                   STARTUP                                     #
 # ============================================================================= #
 
-# Random color script for terminal aesthetics
-colorscript random
+# Colorscript only works on linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  # Random color script for terminal aesthetics
+  colorscript random
+fi
 
 # GapCode
 export PATH="/home/uns/.gapcode/bin:$PATH"
