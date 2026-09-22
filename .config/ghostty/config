@@ -29,6 +29,7 @@ font-thicken = false
 copy-on-select = true
 # theme = TokyoNight Moon
 theme = Catppuccin Mocha
+# theme = Solarized Dark Higher Contrast
 background-opacity = 0.80
 background-blur = true
 unfocused-split-opacity = 0.20

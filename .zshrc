@@ -29,6 +29,11 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 #                           PLATFORM-SPECIFIC SETUP                             #
 # ============================================================================= #
 
+# Check zshrc.local exist or not -> if exist load it
+if [ -f "$HOME/.zshrc.local" ]; then
+    source "$HOME/.zshrc.local"
+fi
+
 # Homebrew command not found handler (macOS only)
 if [[ "$OSTYPE" != "linux-gnu"* ]]; then
   HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
