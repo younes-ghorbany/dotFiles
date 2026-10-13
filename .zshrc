@@ -12,8 +12,8 @@
 
 export NVM_LAZY_LOAD=true                               # Lazy loading nvm for better performance
 export EZA_CONFIG_DIR=~/.config/eza                     # EZA config (macOS only)
-export PATH=/home/uns/.opencode/bin:$PATH               # OpenCode
-export FREEPLANE_JAVA_HOME=/usr/lib/jvm/java-21-openjdk # Freeplane App
+[[ -d "$HOME/.opencode/bin" ]] && export PATH="$HOME/.opencode/bin:$PATH"  # OpenCode
+[[ -d "$HOME/.gapcode/bin" ]] && export PATH="$HOME/.gapcode/bin:$PATH"    # GapCode
 
 # FZF customization
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -34,8 +34,12 @@ if [ -f "$HOME/.zshrc.local" ]; then
     source "$HOME/.zshrc.local"
 fi
 
+# PATH hygiene: dedupe entries (re-sourcing .zshrc) and drop dirs that don't exist
+typeset -U path
+path=(${^path}(N/))
+
 # Homebrew command not found handler (macOS only)
-if [[ "$OSTYPE" != "linux-gnu"* ]]; then
+if [[ "$OSTYPE" != "linux-gnu"* ]] && (( $+commands[brew] )); then
   HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
   if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
     source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER"
@@ -56,8 +60,6 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
 fi
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
 
 # ============================================================================= #
 #                                   TMUX                                        #
@@ -70,11 +72,11 @@ t() {
       command tmux new-session -d -s "GhorbanyDEV" -n "Terminal"
       command tmux new-window -n "Coding"
       command tmux new-window -n "Playground"
-      command tmux new-window -n "Email"
+      # command tmux new-window -n "Email"
       command tmux new-window -n "AI"
       # command tmux new-window -n "👨‍🏫Teaching Terminal"
       command tmux new-window -n "Teaching"
-      command tmux new-window -n "Music"
+      # command tmux new-window -n "Music"
     fi
     command tmux select-window -t "GhorbanyDEV":1
     command tmux attach-session -t "GhorbanyDEV"
@@ -87,22 +89,31 @@ t() {
 #                                 ZSH PLUGINS                                   #
 # ============================================================================= #
 
-zinit light zsh-users/zsh-syntax-highlighting
+# Load order matters: fzf-tab needs compinit first and must load before
+# zsh-autosuggestions; zsh-syntax-highlighting must be sourced last.
+
 zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 zinit light lukechilds/zsh-nvm
-zinit light grml/zsh-lovers
 
 # Built-in plugin snippets
 zinit snippet OMZP::git
 zinit snippet OMZP::npm
 zinit snippet OMZP::command-not-found
 
-# Load completions
-autoload -U compinit && compinit
+# Load completions (cached dump keeps startup fast)
+mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
+autoload -Uz compinit
+compinit -u -d "${XDG_CACHE_HOME:-$HOME/.cache}/zcompdump"
 
 zinit cdreplay -q
+
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Widget-wrapping plugins, in this exact order
+zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
 
 # ============================================================================= #
 #                                  KEYBINDINGS                                  #
@@ -116,27 +127,31 @@ bindkey '^n' history-search-forward
 #                                HISTORY SETTINGS                               #
 # ============================================================================= #
 
-HISTSIZE=5000
+HISTSIZE=50000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
+setopt hist_reduce_blanks
 
 # ============================================================================= # 
 #                               COMPLETION STYLING                              #
 # ============================================================================= #
 
+# Set LS_COLORS for completion list coloring (Linux: dircolors, macOS: coreutils)
+if (( $+commands[dircolors] )); then
+  eval "$(dircolors -b)"
+elif (( $+commands[gdircolors] )); then
+  eval "$(gdircolors -b)"
+fi
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+(( ${+LS_COLORS} )) && zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color -- "$realpath"'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color -- "$realpath"'
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
 # ============================================================================= #
@@ -153,6 +168,9 @@ alias -g ...='cd ../..'
 alias -g ....='cd ../../..'
 alias -g .....='cd ../../../..'
 
+# Cliamp
+alias cmp='cliamp'
+
 # AWWW
 alias aw='awww-daemon &'
 
@@ -164,7 +182,7 @@ alias wpc='warp-cli connect'
 alias wpd='warp-cli disconnect'
 alias wps='warp-cli status'
 
-# Internal ntfs disk mount
+# Internal ntfs disk mount -> only works on my linux machine
 alias mnd='sudo mount /dev/sdb1 /mnt'
 
 # Zsh config 
@@ -205,7 +223,7 @@ alias pacsyyu='sudo pacman -Syyu'                # Refresh pkglist & update stan
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias orphan='sudo pacman -Rns $(pacman -Qtdq)'  # remove orphaned packages (DANGEROUS!)
 
-# Mirror list helpers
+# Mirror list helpers -> Only works on Arch Linux
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
@@ -235,13 +253,13 @@ alias regfont="setfont default8x16"
 # ============================================================================= #
 
 # FZF shell integration
-source <(fzf --zsh)
+(( $+commands[fzf] )) && source <(fzf --zsh)
 
 # Zoxide integration (cd replacement)
-eval "$(zoxide init --cmd cd zsh)"
+(( $+commands[zoxide] )) && eval "$(zoxide init --cmd cd zsh)"
 
 # Oh My Posh prompt (not on Apple Terminal)
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+if (( $+commands[oh-my-posh] )) && [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config "~/.config/ohmyposh/themes/zen.toml")"
 fi
 
@@ -255,5 +273,3 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   colorscript random
 fi
 
-# GapCode
-export PATH="/home/uns/.gapcode/bin:$PATH"
